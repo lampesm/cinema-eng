@@ -15,8 +15,6 @@ Enjoy the comfortable selection of cinema tickets to see your favorite movie
 
 `docker-compose up`
 
-`docker exec -it cinema-eng-container bash`
+`docker-compose run app python manage.py migrate`
 
-`python manage.py migrate`
-
-`python manage.py createsuperuser`
+`docker-compose run app python manage.py createsuperuser`
