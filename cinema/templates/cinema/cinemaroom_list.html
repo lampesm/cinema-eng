@@ -1,0 +1,10 @@
+{% for object in object_list %}
+
+<article>
+    <h2>{{ object.name }}</h2>
+</article>
+<hr>
+
+{% empty %}
+<div> Nothing to show </div>
+{% endfor %}
