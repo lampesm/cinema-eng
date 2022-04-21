@@ -8,11 +8,11 @@ ENV PYTHONPATH=. TZ="Asia/Tehran"
 
 WORKDIR /usr/src/app
 
-COPY pyproject.toml ./
-
 RUN pip install --upgrade pip
 
 RUN pip install poetry
+
+COPY pyproject.toml ./
 
 RUN poetry config virtualenvs.create false
 
