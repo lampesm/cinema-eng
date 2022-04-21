@@ -1,6 +1,6 @@
-# cinema-eng
+# CINEMA ENG
 
-Enjoy the convenient selection of cinema tickets to see your favorite movie
+Enjoy the comfortable selection of cinema tickets to see your favorite movie
 
 # Requirements
 
