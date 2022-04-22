@@ -1,8 +1,6 @@
 from django.urls import path, include, re_path
 
 from .views import CinemaRoomView, ProgramView, ChairView
-from . import views
-
 
 app_name = 'cinema'
 
