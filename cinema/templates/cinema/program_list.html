@@ -1,0 +1,18 @@
+{% for object in program_object %}
+
+<article>
+    <div>نام سالن: {{ object.cinema_room }}</div>
+    <div>نام فیلم: {{ object.movie }}</div>
+    <div>وضعیت پخش: {{ object.status }}</div>
+    <div>ساعت پخش: {{ object.show }}</div>
+    <div>
+        <a href="{% url 'cinema:chair' object.pk %}"> 
+            رزرو بلیط
+        </a>
+    </div>
+</article>
+<hr>
+
+{% empty %}
+<div> Nothing to show </div>
+{% endfor %}

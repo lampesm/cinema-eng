@@ -1,0 +1,11 @@
+{% for object in chair_object %}
+
+<article>
+    <div> شماره صندلی: {{ object.number }}</div>
+    <div>در دسترس بودن: {{ object.availability }}</div>
+</article>
+<hr>
+
+{% empty %}
+<div> Nothing to show </div>
+{% endfor %}

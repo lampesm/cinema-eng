@@ -32,6 +32,7 @@ class CinemaRoom(models.Model):
 
 class Chair(models.Model):
     number = models.IntegerField()
+    availability = models.BooleanField(default=True)
     cinema_room = models.ForeignKey(CinemaRoom, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -41,13 +42,12 @@ class Chair(models.Model):
 class Program(models.Model):
     cinema_room = models.ForeignKey(CinemaRoom, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-    availability = models.BooleanField(default=True)
+    status = models.BooleanField(default=True)
     show = models.DateTimeField(auto_now=False, auto_now_add=False)
 
     def __str__(self):
-        return f'{self.cinema_room} {self.movie} {self.availability} {self.show}'
+        return f'{self.cinema_room} {self.movie} {self.status} {self.show}'
     
-
 
 class Reservation(models.Model):
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)

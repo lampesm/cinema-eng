@@ -21,15 +21,15 @@ class CinemaRoomAdmin(admin.ModelAdmin):
 
 
 class ChairAdmin(admin.ModelAdmin):
-    list_display = ('number', 'cinema_room')
-    list_filter = ('cinema_room',)
+    list_display = ('number', 'availability', 'cinema_room')
+    list_filter = ('cinema_room', 'availability')
     search_fields = ('cinema_room',)
 
 
 class ProgramAdmin(admin.ModelAdmin):
-    list_display = ('cinema_room', 'movie', 'availability', 'show')
-    list_filter = ('cinema_room', 'show', 'availability')
-    search_fields = ('cinema_room', 'movie')
+    list_display = ('cinema_room', 'movie', 'status', 'show',)
+    list_filter = ('cinema_room', 'show', 'status',)
+    search_fields = ('cinema_room', 'movie',)
 
 
 class ReservationAdmin(admin.ModelAdmin):
