@@ -30,15 +30,6 @@ class CinemaRoom(models.Model):
         return self.name
 
 
-class Chair(models.Model):
-    number = models.IntegerField()
-    availability = models.BooleanField(default=True)
-    cinema_room = models.ForeignKey(CinemaRoom, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.number}'
-
-
 class Program(models.Model):
     cinema_room = models.ForeignKey(CinemaRoom, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
@@ -47,6 +38,15 @@ class Program(models.Model):
 
     def __str__(self):
         return f'{self.cinema_room} {self.movie} {self.status} {self.show}'
+
+
+class Chair(models.Model):
+    number = models.IntegerField()
+    availability = models.BooleanField(default=True)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE, default=None)
+
+    def __str__(self):
+        return f'{self.number}'
     
 
 class Reservation(models.Model):

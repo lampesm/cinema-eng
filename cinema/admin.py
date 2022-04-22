@@ -21,9 +21,8 @@ class CinemaRoomAdmin(admin.ModelAdmin):
 
 
 class ChairAdmin(admin.ModelAdmin):
-    list_display = ('number', 'availability', 'cinema_room')
-    list_filter = ('cinema_room', 'availability')
-    search_fields = ('cinema_room',)
+    list_display = ('number', 'availability', 'program')
+    list_filter = ('availability',)
 
 
 class ProgramAdmin(admin.ModelAdmin):

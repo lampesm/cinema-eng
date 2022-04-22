@@ -23,7 +23,7 @@ class ChairView(ListView):
     context_object_name = 'chair_object'
 
     def get_queryset(self):
-        cinema_room_id = self.kwargs.get('cinema_room_id')
-        return Chair.objects.filter(cinema_room_id=cinema_room_id)
+        program_id = self.kwargs.get('program_id')
+        return Chair.objects.filter(program_id=program_id)
 
         
