@@ -30,6 +30,6 @@ class ChairView(ListView):
 
 class UpdateChiarView(UpdateView):
     model = Chair
-    fields = ['number', 'availability'] 
+    fields = ['availability'] 
     template_name = 'cinema/update_status_chair.html' 
     success_url="/"
