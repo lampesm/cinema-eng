@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, UpdateView
+from django.views.generic.edit import FormView
 
 from .models import CinemaRoom, Program, Chair
 
@@ -26,4 +27,9 @@ class ChairView(ListView):
         program_id = self.kwargs.get('program_id')
         return Chair.objects.filter(program_id=program_id)
 
-        
+
+class UpdateChiarView(UpdateView):
+    model = Chair
+    fields = ['number', 'availability'] 
+    template_name = 'cinema/update_status_chair.html' 
+    success_url="/"

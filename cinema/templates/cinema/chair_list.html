@@ -3,10 +3,17 @@
 <article>
     <div> شماره صندلی: {{ object.number }}</div>
     <div>در دسترس بودن: {{ object.availability }}</div>
-    <button>
-        رزرو صندلی
-    </button>
+    
+    <form action="{% url 'cinema:update_chair' object.pk %}" >
+        {% csrf_token %}
+        {% if object.availability %}
+            <input type="submit" name="submit" value="رزور بلیط"  />
+        {% else %}
+            <input type="submit" name="submit" value="رزرو بلیط" disabled/>
+        {% endif %}
+    </form>
 </article>
+
 <hr>
 
 {% empty %}
