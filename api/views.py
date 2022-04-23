@@ -31,6 +31,7 @@ class MoiveListView(ListAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
+
 class MoiveGetView(RetrieveAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
@@ -49,3 +50,36 @@ class MoiveDeleteView(RetrieveDestroyAPIView):
 class MoivePostView(CreateAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
+
+
+
+
+
+
+
+
+
+
+class CinemaRoomListView(ListAPIView):
+    queryset = CinemaRoom.objects.all()
+    serializer_class = CinemaRoomSerializer
+
+
+class CinemaRoomGetView(RetrieveAPIView):
+    queryset = CinemaRoom.objects.all()
+    serializer_class = CinemaRoomSerializer
+
+
+class CinemaRoomUpdateView(RetrieveUpdateAPIView):
+    queryset = CinemaRoom.objects.all()
+    serializer_class = CinemaRoomSerializer
+
+
+class CinemaRoomDeleteView(RetrieveDestroyAPIView):
+    queryset = CinemaRoom.objects.all()
+    serializer_class = CinemaRoomSerializer
+
+
+class CinemaRoomPostView(CreateAPIView):
+    queryset = CinemaRoom.objects.all()
+    serializer_class = CinemaRoomSerializer
