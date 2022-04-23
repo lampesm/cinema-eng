@@ -18,3 +18,5 @@ Enjoy the comfortable selection of cinema tickets to see your favorite movie
 `docker-compose run app python manage.py migrate`
 
 `docker-compose run app python manage.py createsuperuser`
+
+`docker-compose run app python manage.py collectstatic`
