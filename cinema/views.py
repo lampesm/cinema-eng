@@ -1,8 +1,10 @@
-from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, UpdateView
-from django.views.generic.edit import FormView
+from django.shortcuts import  render, redirect
+from django.contrib.auth import login
+from django.contrib import messages
 
 from .models import CinemaRoom, Program, Chair
+from .forms import NewUserForm
 
 
 class CinemaRoomView(ListView):
@@ -33,3 +35,16 @@ class UpdateChiarView(UpdateView):
     fields = ['salesـstatus'] 
     template_name = 'cinema/update_status_chair.html' 
     success_url="/"
+
+
+def register_request(request):
+	if request.method == "POST":
+		form = NewUserForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("cinema:home")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUserForm()
+	return render (request=request, template_name="registration/register.html", context={"register_form":form})

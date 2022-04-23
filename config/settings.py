@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'cinema.apps.CinemaConfig',
     'api.apps.ApiConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [

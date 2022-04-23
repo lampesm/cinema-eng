@@ -20,3 +20,9 @@ Enjoy the comfortable selection of cinema tickets to see your favorite movie
 `docker-compose run app python manage.py createsuperuser`
 
 `docker-compose run app python manage.py collectstatic`
+
+<br>
+
+# Licnese
+
+[GNU](https://github.com/lampesm/cinema-eng/blob/main/LICENSE)
