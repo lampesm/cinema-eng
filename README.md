@@ -2,12 +2,12 @@
 
 Enjoy the comfortable selection of cinema tickets to see your favorite movie
 
-# Requirements
+## Requirements
 
 - docker
 - docker-compose
 
-# Use
+## Use
 
 `cp .env.example .env` and replace your environment in .env file
 
@@ -23,6 +23,6 @@ Enjoy the comfortable selection of cinema tickets to see your favorite movie
 
 <br>
 
-# Licnese
+## Licnese
 
 [GNU](https://github.com/lampesm/cinema-eng/blob/main/LICENSE)
