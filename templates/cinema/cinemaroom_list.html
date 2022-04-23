@@ -1,0 +1,22 @@
+{% extends 'cinema/base.html' %}
+
+{% block title %} rooms {% endblock %}
+
+
+{% block main %}
+
+    {% for object in cinema_object %}
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ object.name }}</h5>
+              <p class="card-text">This is the biggest room of this cinema</p>
+              <a href="{% url 'cinema:program' object.pk %}" class="btn btn-primary">See programs</a>
+            </div>
+        </div>
+
+    {% empty %}
+        <div> Nothing to show </div>
+    {% endfor %}
+
+{% endblock %}
