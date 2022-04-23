@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title> {% block title %}{% endblock %} </title>
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    </head>
+
+    <body style="height: 100vh; gap:8px" class="d-flex justify-content-center align-items-center flex-wrap">
+
+        {% block main %}
+
+        {% endblock %}
+
+    </body>
+
+</html>
