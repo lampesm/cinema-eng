@@ -1,12 +1,6 @@
 from django.contrib import admin
 
-from .models import MyUser, Movie, CinemaRoom, Chair, Program, Reservation
-
-
-class MyUserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'mobile', 'status',)
-    list_filter = ('status',)
-    search_fields = ('username', 'mobile')
+from .models import Movie, CinemaRoom, Chair, Program, Reservation
 
 
 class MovieAdmin(admin.ModelAdmin):
@@ -21,8 +15,8 @@ class CinemaRoomAdmin(admin.ModelAdmin):
 
 
 class ChairAdmin(admin.ModelAdmin):
-    list_display = ('number', 'availability', 'program')
-    list_filter = ('availability',)
+    list_display = ('number', 'salesـstatus', 'program')
+    list_filter = ('salesـstatus',)
 
 
 class ProgramAdmin(admin.ModelAdmin):
@@ -35,7 +29,6 @@ class ReservationAdmin(admin.ModelAdmin):
     list_display = ('user', 'program', 'chair',)
 
 
-admin.site.register(MyUser, MyUserAdmin)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(CinemaRoom, CinemaRoomAdmin)
 admin.site.register(Chair, ChairAdmin)
