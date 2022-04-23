@@ -14,12 +14,12 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title"> seat number: {{ object.number }}</h5>
-                <p class="card-text">availability: {{ object.availability }}</p>
+                <p class="card-text">availability: {{ object.salesـstatus }}</p>
                 <form action="{% url 'cinema:update_chair' object.pk %}" >
-                    {% if object.availability %}
-                        <input class="btn btn-primary" type="submit" name="submit" value="Reservation"  />
-                    {% else %}
+                    {% if object.salesـstatus %}
                         <input class="btn btn-primary" type="submit" name="submit" value="Reservation" disabled/>
+                    {% else %}
+                        <input class="btn btn-primary" type="submit" name="submit" value="Reservation" />
                     {% endif %}
                 </form>
             </div>
