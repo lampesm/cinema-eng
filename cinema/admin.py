@@ -1,31 +1,33 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
+
 
 from .models import Movie, CinemaRoom, Chair, Program, Reservation
 
 
-class MovieAdmin(admin.ModelAdmin):
+class MovieAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('name', 'director', 'duration', 'poster')
-    list_filter = ('duration',)
+    list_filter = ('director',)
     search_fields = ('name', 'director')
 
 
-class CinemaRoomAdmin(admin.ModelAdmin):
+class CinemaRoomAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
 
-class ChairAdmin(admin.ModelAdmin):
+class ChairAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('number', 'salesـstatus', 'program')
     list_filter = ('salesـstatus',)
 
 
-class ProgramAdmin(admin.ModelAdmin):
+class ProgramAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('cinema_room', 'movie', 'status', 'show',)
     list_filter = ('cinema_room', 'show', 'status',)
     search_fields = ('cinema_room', 'movie',)
 
 
-class ReservationAdmin(admin.ModelAdmin):
+class ReservationAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('user', 'program', 'chair',)
 
 

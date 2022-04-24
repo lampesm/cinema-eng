@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'cinema.apps.CinemaConfig',
     'api.apps.ApiConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,5 @@ REST_FRAMEWORK = {
         'api.permissions.IsStaffOrReadOnly',
     ],
 }
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True

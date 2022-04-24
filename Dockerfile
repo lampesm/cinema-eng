@@ -19,3 +19,5 @@ RUN poetry config virtualenvs.create false
 RUN poetry install --no-dev
 
 COPY . .
+
+RUN poetry add django-import-export

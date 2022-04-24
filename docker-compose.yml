@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   app:
-    image: cinema-eng:1.0.0
+    image: cinema-eng:1.0.1
     container_name: cinema-eng-container
     build: .
     command: "python manage.py runserver 0.0.0.0:8000"
