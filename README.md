@@ -21,6 +21,27 @@ Enjoy the comfortable selection of cinema tickets to see your favorite movie
 
 `docker-compose run app python manage.py collectstatic`
 
+### website:
+ - 127.0.0.1:8000
+
+### admin panel:
+- 127.0.0.1:8000/admin
+
+### endpoins:
+- 127.0.0.1:8000/v1/program/update/{pk}
+- 127.0.0.1:8000/v1/chair/update/{pk}
+- 127.0.0.1:8000/v1/movie/get/
+- 127.0.0.1:8000/v1/movie/get/{pk}
+- 127.0.0.1:8000/v1/movie/delete/{pk}
+- 127.0.0.1:8000/v1/movie/update/{pk}
+- 127.0.0.1:8000/v1/movie/post/
+- 127.0.0.1:8000/v1/cinemaroom/get/
+- 127.0.0.1:8000/v1/cinemaroom/get/{pk}
+- 127.0.0.1:8000/v1/cinemaroom/delete/{pk}
+- 127.0.0.1:8000/v1/cinemaroom/update/{pk}
+- 127.0.0.1:8000/v1/cinemaroom/post/
+ 
+
 <br>
 
 ## Licnese
