@@ -79,4 +79,4 @@ def login_request(request):
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
-	return redirect("cinema:home")
+	return render(request=request, template_name="registration/logout.html")
