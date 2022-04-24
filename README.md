@@ -21,13 +21,13 @@ Enjoy the comfortable selection of cinema tickets to see your favorite movie
 
 `docker-compose run app python manage.py collectstatic`
 
-### website:
+**website:**
  - 127.0.0.1:8000
 
-### admin panel:
+**admin panel:**
 - 127.0.0.1:8000/admin
 
-### endpoins:
+**endpoins:**
 - 127.0.0.1:8000/v1/program/update/{pk}
 - 127.0.0.1:8000/v1/chair/update/{pk}
 - 127.0.0.1:8000/v1/movie/get/
