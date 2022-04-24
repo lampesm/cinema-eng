@@ -30,15 +30,9 @@ class Program(models.Model):
 
 
 class Chair(models.Model):
+    program = models.ForeignKey(Program, on_delete=models.CASCADE, default=None)
     number = models.IntegerField()
     salesـstatus = models.BooleanField(default=False)
-    program = models.ForeignKey(Program, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
-        return f'{self.number}'
-    
-
-class Reservation(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    program = models.ForeignKey(Program, on_delete=models.CASCADE)
-    chair = models.ForeignKey(Chair, on_delete=models.CASCADE)
+        return f' {self.program} {self.number}'

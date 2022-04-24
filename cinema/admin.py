@@ -2,7 +2,7 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
 
-from .models import Movie, CinemaRoom, Chair, Program, Reservation
+from .models import Movie, CinemaRoom, Chair, Program
 
 
 class MovieAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -18,7 +18,7 @@ class CinemaRoomAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 class ChairAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('number', 'salesـstatus', 'program')
-    list_filter = ('salesـstatus',)
+    list_filter = ('salesـstatus', 'program')
 
 
 class ProgramAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -27,12 +27,7 @@ class ProgramAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ('cinema_room', 'movie',)
 
 
-class ReservationAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('user', 'program', 'chair',)
-
-
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(CinemaRoom, CinemaRoomAdmin)
 admin.site.register(Chair, ChairAdmin)
 admin.site.register(Program, ProgramAdmin)
-admin.site.register(Reservation, ReservationAdmin)
