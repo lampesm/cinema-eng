@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout 
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import CinemaRoom, Program, Chair
@@ -33,11 +34,14 @@ class ChairView(ListView):
         return Chair.objects.filter(program_id=program_id)
 
 
-class UpdateChiarView(UpdateView):
-    model = Chair
-    fields = ['salesـstatus'] 
-    template_name = 'cinema/update_status_chair.html' 
-    success_url="/"
+class UpdateChiarView(LoginRequiredMixin, UpdateView):
+	model = Chair
+	fields = ['salesـstatus'] 
+	template_name = 'cinema/update_status_chair.html' 
+	success_url="/"
+
+	login_url = '/login'
+	redirect_field_name = '/login'
 
 
 def register_request(request):
